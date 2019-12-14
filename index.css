@@ -1,0 +1,38 @@
+main {
+    text-align: center;
+}
+
+#start-restart-button {
+    font-size: 25px;
+    width: 300px;
+    height: 55px;
+    margin-bottom: 20px;
+    background-color: lightblue;
+}
+
+#placement-score {
+    display: inline;
+    margin-left: 25px;
+}
+
+#submit-next-button {
+    font-size: 18px;
+    font-weight: 500;
+    width: 150px;
+    height: 35px;
+    margin-bottom: 20px;
+    background-color: lightblue;
+}
+
+#good-job{
+    color: rgb(14, 143, 185);
+}
+
+#answer-choices {
+    text-align: left;
+
+}
+
+.footer {
+    height: 80px;
+}
