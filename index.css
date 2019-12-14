@@ -21,6 +21,7 @@ main {
     width: 150px;
     height: 35px;
     margin-bottom: 20px;
+    margin-top: 20px;
     background-color: lightblue;
 }
 
@@ -28,9 +29,9 @@ main {
     color: rgb(14, 143, 185);
 }
 
-#answer-choices {
-    text-align: left;
-    margin-left: 90px;;
+#answer-selections {
+    text-align: center;
+    display: inline-block;
 }
 
 .footer {
