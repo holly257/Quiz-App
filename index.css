@@ -2,6 +2,10 @@ main {
     text-align: center;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 #start-restart-button {
     font-size: 25px;
     width: 300px;
@@ -34,31 +38,26 @@ main {
     display: inline-block;
 }
 
-.footer {
-    height: 80px;
-}
 
 
 
-/* styling for image slideshow*/
 
-#theDots {
-    text-align: center;
-}
 
-* {
-    box-sizing: border-box;
-}
+
+/* slideshow css */
 
 .slideshow-container {
-    max-width: 1000px;
+    width: 40%;
+    padding: 30px;
     position: relative;
     margin: auto;
 }
 
-.mySlides {
-    display: none;
+.slides {
+    height: 60px;
 }
+
+
 
 .dot {
     cursor: pointer;
@@ -71,6 +70,14 @@ main {
     transition: background-color 0.6s ease;
 }
 
+#theDots {
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+}
+
 .active, .dot:hover {
     background-color: #717171;
 }
@@ -81,13 +88,13 @@ main {
     animation-name: fade;
     animation-duration: 1.5s;
   }
-  
+
   @-webkit-keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
   }
-  
+
   @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
-  }
+  } 
