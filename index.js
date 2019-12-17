@@ -11,20 +11,14 @@ $("#start").on("click", function(e){
 });
 
 function loadQuestion() {
-    return store.questions[currentQuestion].question;
+    $("#question-line").html(store.questions[currentQuestion].question);
 }
 
-// function assignChoices(){
-//     let choiceOne = store.questions[currentQuestion].options[0];
-//     let choiceTw0 = store.questions[currentQuestion].options[1];
-//     let choiceThree = store.questions[currentQuestion].options[2];
-//     let choiceFour = store.questions[currentQuestion].options[3];
-// }
-
 function loadChoices(){
-    // assignChoices();
-    // document.getElementById("answerOneLabel").innerText=choiceOne;
-    $(".answerOneLabel").html(store.questions[currentQuestion].options[0]);
+    $("#answerOneLabel").html(store.questions[currentQuestion].options[0]);
+    $("#answerTwoLabel").html(store.questions[currentQuestion].options[1]);
+    $("#answerThreeLabel").html(store.questions[currentQuestion].options[2]);
+    $("#answerFourLabel").html(store.questions[currentQuestion].options[3]);
 }
 
 
@@ -40,7 +34,7 @@ $("#submit-button").on("click", function(e){
 
 function correctOrNot() {
     //how do I check against the correct value?
-    if ($('input[radioButtons]:checked').val() === store.questions[currentQuestion].answer) {
+    if ($('input[name="radioButtons"]:checked').val() === store.questions[currentQuestion].answer) {
         $("#choice-response").html("Correct!"); 
         //increase score by 1
         increaseScore();
