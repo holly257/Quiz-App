@@ -9,13 +9,16 @@
 </head>
 <body>
     <main>
-        <header role="main" class="container">
-            <h1>Geography and Travel Quiz:</h1>
-            <p>How much do you really know about geography?</p>
-        </header>
-        <div>
-            <button id="start-restart-button">Start Quiz!</button>
+        <div class="container">
+            <header role="main">
+                <h1>Geography and Travel Quiz:</h1>
+                <p>How much do you really know about geography?</p>
+            </header>
+            <div>
+                <button class="start-restart-button" id="start">Start Quiz!</button>
+            </div>
         </div>
+        
 
         <div class="slideshow-container">
             <div class="slides fade">
@@ -35,16 +38,11 @@
             </div>
         </div>
 
-        <div id="theDots">
-                <!--not sure about the onclick, I might take that out...-->
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-            </div>
-    </main>
     
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="index.js"></script>
+    <script src="questions.js"></script>
 </body>
 </html>

@@ -79,6 +79,6 @@ const store = {
             answer: "Saigon"
         },
     ],
-    currentQuestion: 0;
-    score: 0;
+    currentQuestion: 0,
+    score: 0
 };

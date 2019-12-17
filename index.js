@@ -1,3 +1,13 @@
+//on start  click
+$("#start").on("click", function(e){
+    for (let i=0; i<store.questions.length; i++){
+
+        console.log(store.questions[i]);
+    }
+});
+
+
+
 
 
 
@@ -20,10 +30,5 @@ function showSlides() {
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}
     slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 4000);
+    setTimeout(showSlides, 5000);
 }
-
-
-
-//https://www.w3schools.com/howto/howto_js_slideshow.asp
-//https://www.htmlgoodies.com/beyond/javascript/stips/create-a-simple-automated-slideshow.html 
