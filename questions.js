@@ -5,7 +5,6 @@ const store = {
             question: "What is the largest archipelago, or chain of islands, in the world?",
             options: [
                 "Norwegian Archipelago",
-                "Archipelago Sea between Finland and the Baltic Sea",
                 "Canadian Arctic Archipelago",
                 "Stockholm Archipelago",
                 "Indonesian Archipelago"
@@ -79,6 +78,4 @@ const store = {
             answer: "Saigon"
         },
     ],
-    currentQuestion: 0,
-    score: 0
 };

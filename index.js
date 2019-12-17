@@ -1,12 +1,39 @@
 //on start  click
 $("#start").on("click", function(e){
-    for (let i=0; i<store.questions.length; i++){
+    //turn off intro - hide
+    $(".homeScreen").hide();
+    //display question
+    $(".question-div").show();
 
-        console.log(store.questions[i]);
-    }
+    loadQuestion();
+    loadChoices();
 });
 
+function loadQuestion() {
+    return store.questions[currentQuestion].question;
+}
 
+function assignChoices(){
+    let choiceOne = store.questions[currentQuestion].options[0];
+    let choiceTw0 = store.questions[currentQuestion].options[1];
+    let choiceThree = store.questions[currentQuestion].options[2];
+    let choiceFour = store.questions[currentQuestion].options[3];
+}
+
+function loadChoices(){
+    document.getElementById("answerOneLabel").innerText=choiceOne;
+    $(".answerTwoLabel").label.append(choiceTwo);
+}
+
+
+//check answer
+//reset quiz to beginning
+//increase current question 
+
+let currentQuestion = 0;
+let score = 0;
+
+//submit on question will increase the currentQuesiton counter
 
 
 
