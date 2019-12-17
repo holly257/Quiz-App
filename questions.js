@@ -9,7 +9,8 @@ const store = {
                 "Stockholm Archipelago",
                 "Indonesian Archipelago"
             ],
-            answer: "Norwegian Archipelago"
+            answer: "Norwegian Archipelago",
+            statement: "The largest archipelago in the world is the Norwegian Archipelago!"
         },
         //2
         {

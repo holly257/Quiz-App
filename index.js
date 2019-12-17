@@ -1,37 +1,63 @@
-//on start  click
+let currentQuestion = 0;
+let score = 0;
+
+
 $("#start").on("click", function(e){
-    //turn off intro - hide
     $(".homeScreen").hide();
-    //display question
     $(".question-div").show();
 
     loadQuestion();
-    loadChoices();
+    console.log(loadChoices());
 });
 
 function loadQuestion() {
     return store.questions[currentQuestion].question;
 }
 
-function assignChoices(){
-    let choiceOne = store.questions[currentQuestion].options[0];
-    let choiceTw0 = store.questions[currentQuestion].options[1];
-    let choiceThree = store.questions[currentQuestion].options[2];
-    let choiceFour = store.questions[currentQuestion].options[3];
-}
+// function assignChoices(){
+//     let choiceOne = store.questions[currentQuestion].options[0];
+//     let choiceTw0 = store.questions[currentQuestion].options[1];
+//     let choiceThree = store.questions[currentQuestion].options[2];
+//     let choiceFour = store.questions[currentQuestion].options[3];
+// }
 
 function loadChoices(){
-    document.getElementById("answerOneLabel").innerText=choiceOne;
-    $(".answerTwoLabel").label.append(choiceTwo);
+    // assignChoices();
+    // document.getElementById("answerOneLabel").innerText=choiceOne;
+    $(".answerOneLabel").html(store.questions[currentQuestion].options[0]);
 }
 
 
+
+
+$("#submit-button").on("click", function(e){
+    $(".question-div").hide();
+    $(".correct-incorrect").show();
+    correctOrNot();
+    //need to update score to new score
+    
+})
+
+function correctOrNot() {
+    //how do I check against the correct value?
+    if ($('input[radioButtons]:checked').val() === store.questions[currentQuestion].answer) {
+        $("#choice-response").html("Correct!"); 
+        //increase score by 1
+        increaseScore();
+    } else {
+        $("#choice-response").html("Good Try! Actually...");
+    };
+    //either way, set p/ correct-statement = currentQuestion.statement
+
+}
+
+function increaseScore(){
+    score++;
+    return score;
+}
 //check answer
 //reset quiz to beginning
 //increase current question 
-
-let currentQuestion = 0;
-let score = 0;
 
 //submit on question will increase the currentQuesiton counter
 

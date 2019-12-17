@@ -34,7 +34,7 @@ main {
     margin-left: 25px;
 }
 
-#submit-next-button {
+.submit-next-button {
     font-size: 18px;
     font-weight: 500;
     width: 150px;
@@ -44,7 +44,7 @@ main {
     background-color: rgb(19, 178, 231);
 }
 
-#good-job{
+#reward-statement{
     color: rgb(14, 143, 185);
 }
 
