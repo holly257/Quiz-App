@@ -35,6 +35,14 @@ $("#next-button").on("click", function(e){
     loadChoices();
 })
 
+//restart button
+$("#restart-button").on("click", function(e){
+    $(".homeScreen").show();
+    $(".results").hide();
+    questionReset();
+    scoreReset();
+})
+
 
 function loadChoices(){
     $("#answerOneLabel").html(store.questions[currentQuestion].options[0]);
@@ -72,7 +80,7 @@ function correctOrNot() {
 //question functionality
 function loadQuestion() {
     $("#question-line").html(store.questions[currentQuestion].question);
-    // isLastQuestion();
+    isLastQuestion();
 }
 
 function isLastQuestion(){
@@ -87,8 +95,9 @@ function renderResults(){
     console.log("here's your results!")
     //finish this code going off next question button to results page
     $(".correct-incorrect").hide();
-
-
+    $(".question-div").hide();
+    $(".results").show();
+    finalScore();
 }
 
 function increaseQuestionNumber(){
@@ -100,6 +109,11 @@ function loadQuestionNumber(){
     $(".question-number").html("Current Question: " + currentQuestion + "/" + store.questions.length);
 }
 
+function questionReset(){
+    currentQuestion = 0;
+    return currentQuestion;
+}
+
 
 //score
 function increaseScore(){
@@ -109,6 +123,15 @@ function increaseScore(){
 
 function loadScore(){
     $(".scorecard").html("Score: " + score + "/" + store.questions.length);
+}
+
+function finalScore(){
+    $("#final-score").html("Your final score is " + score + " of " + store.questions.length + " correct.");
+}
+
+function scoreReset(){
+    score = 0;
+    return score;
 }
 
 //statement
