@@ -35,9 +35,6 @@ $("#next-button").on("click", function(e){
     loadChoices();
 })
 
-function loadQuestion() {
-    $("#question-line").html(store.questions[currentQuestion].question);
-}
 
 function loadChoices(){
     $("#answerOneLabel").html(store.questions[currentQuestion].options[0]);
@@ -50,8 +47,10 @@ function loadChoices(){
 let answerSelected = ""
 //only works when you click, doesn't work for auto loaded checked box
 //might need to find a different way to do this...
+/////console.log($('input[name="radioButtons"]:checked').find("label").text());
 //auto filled box also moves?
-$("#answer-selections").on("click", "label", function(e){
+$("#selection-form").on("submit","label", function(e){
+    e.preventDefault();
     answerSelected = $(this).text();
     return answerSelected;
 })
@@ -67,7 +66,28 @@ function correctOrNot() {
 }
 
 
-//question number
+//question functionality
+function loadQuestion() {
+    $("#question-line").html(store.questions[currentQuestion].question);
+    isLastQuestion();
+}
+
+function isLastQuestion(){
+    if (currentQuestion === store.questions.length-1){
+        renderResults();
+    } else {
+        console.log("not last question");
+    }
+}
+
+function renderResults(){
+    console.log("here's your results!")
+    //finish this code going off next question button to results page
+    $(".correct-incorrect").hide();
+
+
+}
+
 function increaseQuestionNumber(){
     currentQuestion++;
     return currentQuestion;
@@ -76,6 +96,7 @@ function increaseQuestionNumber(){
 function loadQuestionNumber(){
     $(".question-number").html("Current Question: " + currentQuestion + "/" + store.questions.length);
 }
+
 
 //score
 function increaseScore(){
