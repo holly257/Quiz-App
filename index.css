@@ -28,7 +28,7 @@ main {
     background-color: lightblue;
 }
 
-#placement-score {
+.placement {
     display: inline;
     margin-left: 25px;
 }

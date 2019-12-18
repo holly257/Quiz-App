@@ -21,7 +21,8 @@ const store = {
                 "South Africa",
                 "Tanzania"
             ],
-            answer: "South Africa"
+            answer: "South Africa",
+            statement: "other statement"
         },
         //3
         {
@@ -32,7 +33,8 @@ const store = {
                 "Caspian Sea",
                 "Persian Gulf"
             ],
-            answer: "Adriatic Sea"
+            answer: "Adriatic Sea",
+            statement: "other statement"
         },
         //4
         {
@@ -43,7 +45,8 @@ const store = {
                 "Switzerland",
                 "Russia"
             ],
-            answer: "Nepal"
+            answer: "Nepal",
+            statement: "other statement"
         },
         //5
         {
@@ -54,7 +57,8 @@ const store = {
                 "Russia",
                 "Serbia"
             ],
-            answer: "Serbia"
+            answer: "Serbia",
+            statement: "other statement"
         },
         //6
         {
@@ -65,7 +69,8 @@ const store = {
                 "Malaysia",
                 "Thailand"
             ],
-            answer: "Cambodia"
+            answer: "Cambodia",
+            statement: "other statement"
         },
         //7
         {
@@ -76,7 +81,8 @@ const store = {
                 "Phnom Penh",
                 "Saigon"
             ],
-            answer: "Saigon"
+            answer: "Saigon",
+            statement: "other statement"
         },
     ],
 };

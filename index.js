@@ -2,11 +2,13 @@ let currentQuestion = 0;
 let score = 0;
 
 
+//start quiz button
 $("#start").on("click", function(e){
     $(".homeScreen").hide();
     $(".question-div").show();
-
     loadQuestion();
+    loadQuestionNumber();
+    loadScore();
     console.log(loadChoices());
 });
 
@@ -23,43 +25,60 @@ function loadChoices(){
 
 
 
-
+//submit answer button
 $("#submit-button").on("click", function(e){
     $(".question-div").hide();
     $(".correct-incorrect").show();
     correctOrNot();
-    //need to update score to new score
-    
+    loadScore();
+    loadQuestionNumber();
+    loadStatement();
 })
 
 function correctOrNot() {
     //how do I check against the correct value?
-    if ($('input[name="radioButtons"]:checked').val() === store.questions[currentQuestion].answer) {
+    if ($("input[name='radioButtons']:checked").val() === store.questions[currentQuestion].answer) {
         $("#choice-response").html("Correct!"); 
         //increase score by 1
         increaseScore();
     } else {
         $("#choice-response").html("Good Try! Actually...");
     };
-    //either way, set p/ correct-statement = currentQuestion.statement
+}
+
+//question number
+function increaseQuestionNumber(){
+    currentQuestion++;
+    return currentQuestion;
+}
+
+function loadQuestionNumber(){
+    $(".question-number").html("Current Question: " + currentQuestion + "/" + store.questions.length);
 
 }
 
+//score
 function increaseScore(){
     score++;
     return score;
 }
-//check answer
-//reset quiz to beginning
-//increase current question 
 
-//submit on question will increase the currentQuesiton counter
+function loadScore(){
+    $(".scorecard").html("Score: " + score + "/" + store.questions.length);
+
+}
+
+//statement
+function loadStatement(){
+    $("#correct-statement").html(store.questions[currentQuestion].statement);
+
+}
+
+//next question button
+//call increaseQuestionNumber()
 
 
-
-
-
-//slideshow js
+//background slideshow js
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
