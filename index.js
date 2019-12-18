@@ -9,8 +9,31 @@ $("#start").on("click", function(e){
     loadQuestion();
     loadQuestionNumber();
     loadScore();
-    console.log(loadChoices());
+    loadChoices();
 });
+
+//submit answer button
+$("#submit-button").on("click", function(e){
+    $(".question-div").hide();
+    $(".correct-incorrect").show();
+    correctOrNot();
+    loadScore();
+    loadQuestionNumber();
+    loadStatement();
+})
+
+
+
+//next question button
+$("#next-button").on("click", function(e){
+    $(".correct-incorrect").hide();
+    $(".question-div").show();
+    increaseQuestionNumber();
+    loadQuestionNumber();
+    loadQuestion();
+    loadScore();
+    loadChoices();
+})
 
 function loadQuestion() {
     $("#question-line").html(store.questions[currentQuestion].question);
@@ -24,27 +47,25 @@ function loadChoices(){
 }
 
 
-
-//submit answer button
-$("#submit-button").on("click", function(e){
-    $(".question-div").hide();
-    $(".correct-incorrect").show();
-    correctOrNot();
-    loadScore();
-    loadQuestionNumber();
-    loadStatement();
+let answerSelected = ""
+//only works when you click, doesn't work for auto loaded checked box
+//might need to find a different way to do this...
+//auto filled box also moves?
+$("#answer-selections").on("click", "label", function(e){
+    answerSelected = $(this).text();
+    return answerSelected;
 })
 
 function correctOrNot() {
-    //how do I check against the correct value?
-    if ($("input[name='radioButtons']:checked").val() === store.questions[currentQuestion].answer) {
+    if (answerSelected === store.questions[currentQuestion].answer) {
+        console.log("good job");
         $("#choice-response").html("Correct!"); 
-        //increase score by 1
         increaseScore();
     } else {
         $("#choice-response").html("Good Try! Actually...");
     };
 }
+
 
 //question number
 function increaseQuestionNumber(){
@@ -54,7 +75,6 @@ function increaseQuestionNumber(){
 
 function loadQuestionNumber(){
     $(".question-number").html("Current Question: " + currentQuestion + "/" + store.questions.length);
-
 }
 
 //score
@@ -65,20 +85,17 @@ function increaseScore(){
 
 function loadScore(){
     $(".scorecard").html("Score: " + score + "/" + store.questions.length);
-
 }
 
 //statement
 function loadStatement(){
     $("#correct-statement").html(store.questions[currentQuestion].statement);
-
 }
 
-//next question button
-//call increaseQuestionNumber()
 
 
-//background slideshow js
+
+//-------- background slideshow js
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }

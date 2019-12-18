@@ -53,11 +53,11 @@
             </section>
             <h2 id="question-line"></h2>
             <div id="answer-selections">
-                <form >
-                    <input id="answerOne" name="radioButtons" type="radio" checked><label id="answerOneLabel" for="answerOne"></label><br>
-                    <input id="answerTwo" name="radioButtons" type="radio" checked><label id="answerTwoLabel" for="answerTwo"></label><br>
-                    <input id="answerThree" name="radioButtons" type="radio" checked><label id="answerThreeLabel" for="answerThree"></label><br>
-                    <input id="answerFour" name="radioButtons" type="radio" checked><label id="answerFourLabel" for="answerFour"></label>
+                <form id="selection-form">
+                    <input id="answerOne" class="inputRadioButton" name="radioButtons" type="radio" checked><label id="answerOneLabel" for="answerOne"></label><br>
+                    <input id="answerTwo" class="inputRadioButton" name="radioButtons" type="radio" ><label id="answerTwoLabel" for="answerTwo"></label><br>
+                    <input id="answerThree" class="inputRadioButton" name="radioButtons" type="radio" ><label id="answerThreeLabel" for="answerThree"></label><br>
+                    <input id="answerFour" class="inputRadioButton" name="radioButtons" type="radio" ><label id="answerFourLabel" for="answerFour"></label>
                 </form> 
             </div>
             <div>
@@ -76,7 +76,7 @@
                 <p id="correct-statement"></p>
             </section>
             <div>          
-                <button class="submit-next-button">Next Question</button>
+                <button class="submit-next-button" id="next-button">Next Question</button>
             </div>
         </div>
 
