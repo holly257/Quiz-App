@@ -10,11 +10,11 @@ const store = {
                 "Indonesian Archipelago"
             ],
             answer: "Norwegian Archipelago",
-            statement: "The largest archipelago in the world is the Norwegian Archipelago!"
+            statement: "The largest archipelago in the world is the Norwegian Archipelago! It contains smaller archipelagos, like Svalbard, where the Northern Lights are visible during winter."
         },
         //2
         {
-            question: "Lions Head is location in what country?",
+            question: "Lion's Head is location in what country?",
             options: [
                 "Madagascar",
                 "India",
@@ -22,7 +22,7 @@ const store = {
                 "Tanzania"
             ],
             answer: "South Africa",
-            statement: "other statement"
+            statement: "Lion's Head is a mountain located in Cape Town, South Africa between Table Mountain and Signal Hill."
         },
         //3
         {
@@ -34,19 +34,19 @@ const store = {
                 "Persian Gulf"
             ],
             answer: "Adriatic Sea",
-            statement: "other statement"
+            statement: "The Adriatic Sea runs along Italy's East border and seperates it from the Balkan peninsula."
         },
         //4
         {
-            question: "The Himalayas go through which country?",
+            question: "The Himalayas go through which countries?",
             options: [
-                "Nepal",
-                "Tanzania",
-                "Switzerland",
-                "Russia"
+                "Nepal, China, Bhutan & India",
+                "Tanzania & Burundi",
+                "Switzerland, Austria, & Germany",
+                "Russia, Mongolia, & China"
             ],
             answer: "Nepal",
-            statement: "other statement"
+            statement: "The Himalayas go through Nepal, China, Bhutan & India. They are a result of tectonic plates that collided India into Tibet."
         },
         //5
         {
@@ -58,7 +58,7 @@ const store = {
                 "Serbia"
             ],
             answer: "Serbia",
-            statement: "other statement"
+            statement: "Kosovo declared its independence from Serbia in February of 2008."
         },
         //6
         {
@@ -70,7 +70,7 @@ const store = {
                 "Thailand"
             ],
             answer: "Cambodia",
-            statement: "other statement"
+            statement: "Cambodia is the English version of Kampuchea, the official name of the country. Khmer is based of the traditional spelling."
         },
         //7
         {
@@ -82,7 +82,7 @@ const store = {
                 "Saigon"
             ],
             answer: "Saigon",
-            statement: "other statement"
+            statement: "Saigon was merge with the surrounding province and renamed Ho Chi Minh to celebrate reunification after the Vietnam War."
         },
     ],
 };
