@@ -47,10 +47,13 @@ function loadChoices(){
 let answerSelected = ""
 //only works when you click, doesn't work for auto loaded checked box
 //might need to find a different way to do this...
+/////$("#selection-form").on("submit", function(e){
 /////console.log($('input[name="radioButtons"]:checked').find("label").text());
+//})
+//also moved button out of form and took out type="submit"
 //auto filled box also moves?
-$("#selection-form").on("submit","label", function(e){
-    e.preventDefault();
+$("#answer-selections").on("click","label", function(e){
+    // e.preventDefault();
     answerSelected = $(this).text();
     return answerSelected;
 })
@@ -69,7 +72,7 @@ function correctOrNot() {
 //question functionality
 function loadQuestion() {
     $("#question-line").html(store.questions[currentQuestion].question);
-    isLastQuestion();
+    // isLastQuestion();
 }
 
 function isLastQuestion(){
