@@ -128,7 +128,7 @@ input {
 #question-line {
     font-size: 100%;
     padding: 2%;
-    margin: 2%;
+    margin: 3%;
 }
 
 #next-button {
@@ -178,3 +178,36 @@ input {
     from {opacity: .4}
     to {opacity: 1}
   } 
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .container {
+    font-size: 18px;
+    font-weight: 500;
+    width: 80%;
+    height: 55%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    }
+
+    #final-score {
+        margin-top: 18%;
+    }
+
+    #restart-button, #start{
+        width: 80%;
+    }
+
+    .submit-next-button {
+        position: absolute;
+        bottom: 2%;
+        width: 50%;
+        height: 10%;
+        left: -50%;
+        right: -50%;
+    }
+
+    #home {
+        margin-top: 35%;
+    }
+    /* center beginning and results div horizontally */
+}
