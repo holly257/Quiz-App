@@ -26,7 +26,7 @@ const store = {
         },
         //3
         {
-            question: "Which body of water is on the East of Italy?",
+            question: "Which body of water is on the East coast of Italy?",
             options: [
                 "Mediterranean Sea",
                 "Adriatic Sea",
@@ -34,7 +34,7 @@ const store = {
                 "Persian Gulf"
             ],
             answer: "Adriatic Sea",
-            statement: "The Adriatic Sea runs along Italy's East border and seperates it from the Balkan peninsula."
+            statement: "The Adriatic Sea runs along Italy's East coast and seperates it from the Balkan peninsula."
         },
         //4
         {
@@ -45,8 +45,8 @@ const store = {
                 "Switzerland, Austria, & Germany",
                 "Russia, Mongolia, & China"
             ],
-            answer: "Nepal",
-            statement: "The Himalayas go through Nepal, China, Bhutan & India. They are a result of tectonic plates that collided India into Tibet."
+            answer: "Nepal, China, Bhutan & India",
+            statement: "The Himalayas go through Nepal, China, Bhutan & India. They are a result of moving tectonic plates that collided India into Tibet."
         },
         //5
         {
@@ -82,7 +82,7 @@ const store = {
                 "Saigon"
             ],
             answer: "Saigon",
-            statement: "Saigon was merge with the surrounding province and renamed Ho Chi Minh to celebrate reunification after the Vietnam War."
+            statement: "Saigon was merged with the surrounding province and renamed Ho Chi Minh to celebrate reunification after the Vietnam War."
         },
     ],
 };

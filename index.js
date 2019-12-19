@@ -1,33 +1,32 @@
 let currentQuestion = 0;
 let score = 0;
 
-
-//start quiz button
+//buttons
 $("#start").on("click", function(e){
     $(".homeScreen").hide();
     $(".question-div").show();
-    loadQuestion();
-    loadQuestionNumber();
-    loadScore();
-    loadChoices();
+    loadQuestionPage();
 });
 
+$("#submit-form").on("submit", function(e){
+    e.preventDefault();
+    $(".question-div").hide();
+    $(".correct-incorrect").show();
+    loadQuestionNumber();
+    correctOrNot();
+    loadScore();
+    loadStatement();
+})
 
-//next question button
 $("#next-button").on("click", function(e){
     $(".correct-incorrect").hide();
     $(".question-div").show();
     if(!isLastQuestion()){
         increaseQuestionNumber();
-        loadQuestionNumber();
-        loadQuestion();
-        loadScore();
-        loadChoices(); 
+        loadQuestionPage();
     };
-
 })
 
-//restart button
 $("#restart-button").on("click", function(e){
     $(".homeScreen").show();
     $(".results").hide();
@@ -35,57 +34,13 @@ $("#restart-button").on("click", function(e){
     scoreReset();
 })
 
-//set variable for each choice
-//then set that variable equal to the html in the label 
-//then set the variable equal to the val for that radio button
-
-
-function loadChoices(){
-    let choiceOne = store.questions[currentQuestion].options[0];
-    let choiceTwo = store.questions[currentQuestion].options[1];
-    let choiceThree = store.questions[currentQuestion].options[2];
-    let choiceFour = store.questions[currentQuestion].options[3];
-    $("#answerOneLabel").html(choiceOne);
-    $("#answerTwoLabel").html(choiceTwo);
-    $("#answerThreeLabel").html(choiceThree);
-    $("#answerFourLabel").html(choiceFour);
-    $("#answerOne").val(choiceOne);
-    $("#answerTwo").val(choiceTwo);
-    $("#answerThree").val(choiceThree);
-    $("#answerFour").val(choiceFour);
+//question
+function increaseQuestionNumber(){
+    currentQuestion++;
+    return currentQuestion;
 }
 
-
-
-//auto filled box also moves?
-$("#selection-form").on("submit", function(e){
-    e.preventDefault();
-    $(".question-div").hide();
-    $(".correct-incorrect").show();
-    correctOrNot();
-    loadScore();
-    loadQuestionNumber();
-    loadStatement();
-})
-
-function correctOrNot() {
-    let answerSelected = $('input[name="radioButtons"]:checked').val(); 
-    console.log(answerSelected);
-    if (!answerSelected){
-        $("#choice-response").html("Please choose an answer...");
-        //fix code to handle this
-    } else if (answerSelected === store.questions[currentQuestion].answer) {
-        console.log("good job");
-        $("#choice-response").html("Correct!"); 
-        increaseScore();
-    } else {
-        $("#choice-response").html("Good Try! Actually...");
-    };
-}
-
-
-//question functionality
-function loadQuestion() {
+function getQuestion() {
     $("#question-line").html(store.questions[currentQuestion].question);
     $('input[name="radioButtons"]').prop("checked", false);
 }
@@ -99,20 +54,6 @@ function isLastQuestion(){
     }
 }
 
-function renderResults(){
-    console.log("here's your results!")
-    //finish this code going off next question button to results page
-    $(".correct-incorrect").hide();
-    $(".question-div").hide();
-    $(".results").show();
-    finalScore();
-}
-
-function increaseQuestionNumber(){
-    currentQuestion++;
-    return currentQuestion;
-}
-
 function loadQuestionNumber(){
     $(".question-number").html("Current Question: " + (currentQuestion+1) + "/" + store.questions.length);
 }
@@ -121,7 +62,6 @@ function questionReset(){
     currentQuestion = 0;
     return currentQuestion;
 }
-
 
 //score
 function increaseScore(){
@@ -147,17 +87,59 @@ function loadStatement(){
     $("#correct-statement").html(store.questions[currentQuestion].statement);
 }
 
+//general
+function loadChoices(){
+    let choiceOne = store.questions[currentQuestion].options[0];
+    let choiceTwo = store.questions[currentQuestion].options[1];
+    let choiceThree = store.questions[currentQuestion].options[2];
+    let choiceFour = store.questions[currentQuestion].options[3];
+    $("#answerOneLabel").html(choiceOne);
+    $("#answerTwoLabel").html(choiceTwo);
+    $("#answerThreeLabel").html(choiceThree);
+    $("#answerFourLabel").html(choiceFour);
+    $("#answerOne").val(choiceOne);
+    $("#answerTwo").val(choiceTwo);
+    $("#answerThree").val(choiceThree);
+    $("#answerFour").val(choiceFour);
+}
 
+function loadQuestionPage(){
+    loadQuestionNumber();
+    loadScore();
+    getQuestion();
+    loadChoices();
+}
 
+function correctOrNot() {
+    let answerSelected = $('input[name="radioButtons"]:checked').val(); 
+    console.log(answerSelected);
+    if (!answerSelected){
+        $("#choice-response").html("Please select an answer next time...");
+    } else if (answerSelected === store.questions[currentQuestion].answer) {
+        console.log("good job");
+        $("#choice-response").html("Correct!"); 
+        increaseScore();
+    } else {
+        $("#choice-response").html("Good Try! Actually...");
+    };
+}
 
-//-------- background slideshow js
+function renderResults(){
+    console.log("here's your results!")
+    //finish this code going off next question button to results page
+    $(".correct-incorrect").hide();
+    $(".question-div").hide();
+    $(".results").show();
+    finalScore();
+}
+
+//background slideshow
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
 var slideIndex = 1;
 showSlides(slideIndex);
-
 
 function showSlides() {
     var i;
