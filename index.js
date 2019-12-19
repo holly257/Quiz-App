@@ -12,27 +12,19 @@ $("#start").on("click", function(e){
     loadChoices();
 });
 
-//submit answer button
-$("#submit-button").on("click", function(e){
-    $(".question-div").hide();
-    $(".correct-incorrect").show();
-    correctOrNot();
-    loadScore();
-    loadQuestionNumber();
-    loadStatement();
-})
-
-
 
 //next question button
 $("#next-button").on("click", function(e){
     $(".correct-incorrect").hide();
     $(".question-div").show();
-    increaseQuestionNumber();
-    loadQuestionNumber();
-    loadQuestion();
-    loadScore();
-    loadChoices();
+    if(!isLastQuestion()){
+        increaseQuestionNumber();
+        loadQuestionNumber();
+        loadQuestion();
+        loadScore();
+        loadChoices(); 
+    };
+
 })
 
 //restart button
@@ -46,30 +38,43 @@ $("#restart-button").on("click", function(e){
 //set variable for each choice
 //then set that variable equal to the html in the label 
 //then set the variable equal to the val for that radio button
+
+
 function loadChoices(){
-    $("#answerOneLabel").html(store.questions[currentQuestion].options[0]);
-    $("#answerTwoLabel").html(store.questions[currentQuestion].options[1]);
-    $("#answerThreeLabel").html(store.questions[currentQuestion].options[2]);
-    $("#answerFourLabel").html(store.questions[currentQuestion].options[3]);
+    let choiceOne = store.questions[currentQuestion].options[0];
+    let choiceTwo = store.questions[currentQuestion].options[1];
+    let choiceThree = store.questions[currentQuestion].options[2];
+    let choiceFour = store.questions[currentQuestion].options[3];
+    $("#answerOneLabel").html(choiceOne);
+    $("#answerTwoLabel").html(choiceTwo);
+    $("#answerThreeLabel").html(choiceThree);
+    $("#answerFourLabel").html(choiceFour);
+    $("#answerOne").val(choiceOne);
+    $("#answerTwo").val(choiceTwo);
+    $("#answerThree").val(choiceThree);
+    $("#answerFour").val(choiceFour);
 }
 
 
-let answerSelected = ""
-//only works when you click, doesn't work for auto loaded checked box
-//might need to find a different way to do this...
-/////$("#selection-form").on("submit", function(e){
-/////console.log($('input[name="radioButtons"]:checked').find("label").text());
-//})
-//also moved button out of form and took out type="submit"
+
 //auto filled box also moves?
-$("#answer-selections").on("click","label", function(e){
-    // e.preventDefault();
-    answerSelected = $(this).text();
-    return answerSelected;
+$("#selection-form").on("submit", function(e){
+    e.preventDefault();
+    $(".question-div").hide();
+    $(".correct-incorrect").show();
+    correctOrNot();
+    loadScore();
+    loadQuestionNumber();
+    loadStatement();
 })
 
 function correctOrNot() {
-    if (answerSelected === store.questions[currentQuestion].answer) {
+    let answerSelected = $('input[name="radioButtons"]:checked').val(); 
+    console.log(answerSelected);
+    if (!answerSelected){
+        $("#choice-response").html("Please choose an answer...");
+        //fix code to handle this
+    } else if (answerSelected === store.questions[currentQuestion].answer) {
         console.log("good job");
         $("#choice-response").html("Correct!"); 
         increaseScore();
@@ -82,14 +87,15 @@ function correctOrNot() {
 //question functionality
 function loadQuestion() {
     $("#question-line").html(store.questions[currentQuestion].question);
-    isLastQuestion();
+    $('input[name="radioButtons"]').prop("checked", false);
 }
 
 function isLastQuestion(){
     if (currentQuestion === store.questions.length-1){
         renderResults();
+        return true;
     } else {
-        console.log("not last question");
+        return false;
     }
 }
 
@@ -108,7 +114,7 @@ function increaseQuestionNumber(){
 }
 
 function loadQuestionNumber(){
-    $(".question-number").html("Current Question: " + currentQuestion + "/" + store.questions.length);
+    $(".question-number").html("Current Question: " + (currentQuestion+1) + "/" + store.questions.length);
 }
 
 function questionReset(){
