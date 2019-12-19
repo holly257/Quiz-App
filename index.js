@@ -43,7 +43,9 @@ $("#restart-button").on("click", function(e){
     scoreReset();
 })
 
-
+//set variable for each choice
+//then set that variable equal to the html in the label 
+//then set the variable equal to the val for that radio button
 function loadChoices(){
     $("#answerOneLabel").html(store.questions[currentQuestion].options[0]);
     $("#answerTwoLabel").html(store.questions[currentQuestion].options[1]);
