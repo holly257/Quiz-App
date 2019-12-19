@@ -39,6 +39,11 @@ form {
     margin: 0;
 }
 
+input {
+    margin: 2%;
+    margin-left: 5%;
+}
+
 .container {
     background-color: rgba(22, 22, 22, 0.918);
     margin: 0;
@@ -87,12 +92,13 @@ form {
     background-color: white;
     border-radius: 10px;
     color: black;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .question-div, .correct-incorrect, .results {
     display: none;
 }
-
 
 #home{
     padding: 1%;
@@ -106,6 +112,7 @@ form {
     text-align: center;
     display: inline-block;
     font-size: 80%;
+    width: 100%;
 }
 
 #choice-response {
