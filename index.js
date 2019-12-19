@@ -12,8 +12,8 @@ $("#submit-form").on("submit", function(e){
     e.preventDefault();
     $(".question-div").hide();
     $(".correct-incorrect").show();
-    loadQuestionNumber();
     correctOrNot();
+    loadQuestionNumber();
     loadScore();
     loadStatement();
 })
@@ -74,7 +74,7 @@ function loadScore(){
 }
 
 function finalScore(){
-    $("#final-score").html("Your final score is " + score + " of " + store.questions.length + " correct.");
+    $("#final-score").html("Your final score is " + score + " of " + store.questions.length + " correct!");
 }
 
 function scoreReset(){
@@ -112,11 +112,9 @@ function loadQuestionPage(){
 
 function correctOrNot() {
     let answerSelected = $('input[name="radioButtons"]:checked').val(); 
-    console.log(answerSelected);
     if (!answerSelected){
         $("#choice-response").html("Please select an answer next time...");
     } else if (answerSelected === store.questions[currentQuestion].answer) {
-        console.log("good job");
         $("#choice-response").html("Correct!"); 
         increaseScore();
     } else {
@@ -125,8 +123,6 @@ function correctOrNot() {
 }
 
 function renderResults(){
-    console.log("here's your results!")
-    //finish this code going off next question button to results page
     $(".correct-incorrect").hide();
     $(".question-div").hide();
     $(".results").show();

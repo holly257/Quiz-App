@@ -1,17 +1,49 @@
 main {
     text-align: center;
     height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 125%;
 }
 
 * {
     box-sizing: border-box;
-    color: white;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Inria Serif', serif;
+}
+
+h2 {
+    padding: 1%;
+    margin: 1%;
+    border: 1px;
+    text-align: left;
+}
+
+p {
+    margin: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+form {
+    text-align: left;
+    width: 100%;
+    margin: 0;
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.918);
+    background-color: rgba(22, 22, 22, 0.918);
     margin: 0;
-    padding: 2%;
+    /* padding: 2%; */
+    border: 2px solid white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -20,12 +52,23 @@ main {
     border-radius: 15px;
 }
 
+.top-div {
+    background-color: lightblue;
+    color: black;
+    padding: 2%;
+    border-radius: 13px 13px 0 0;
+    border: 1px solid white;
+    text-shadow: 1px 1px white;
+}
+
 .start-restart-button {
     font-size: 25px;
     width: 300px;
     height: 55px;
     margin-bottom: 20px;
     background-color: lightblue;
+    border-radius: 10px;
+    color: black;
 }
 
 .placement {
@@ -34,36 +77,61 @@ main {
 }
 
 .submit-next-button {
+    display: block;
     font-size: 18px;
     font-weight: 500;
-    width: 150px;
-    height: 35px;
+    width: 60%;
+    height: 60%;
     margin-bottom: 20px;
     margin-top: 20px;
-    background-color: rgb(19, 178, 231);
-}
-
-#reward-statement{
-    color: rgb(14, 143, 185);
-}
-
-#answer-selections {
-    text-align: center;
-    display: inline-block;
-}
-
-body {
-    margin: 0;
-    height: 100vh;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
 }
 
 .question-div, .correct-incorrect, .results {
     display: none;
 }
 
+#home{
+    padding: 1%;
+}
 
+#final-score {
+    padding: 2%;
+}
 
+#answer-selections {
+    text-align: center;
+    display: inline-block;
+    font-size: 80%;
+}
 
+#choice-response {
+    font-size: 110%;
+    padding: 2%;
+    margin: 2%;
+}
+
+#intro {
+    text-align: center;
+}
+
+#question-line {
+    font-size: 100%;
+    padding: 2%;
+    margin: 2%;
+}
+
+#next-button {
+    align-content: center;
+}
+
+#correct-statement {
+    text-align: left;
+    padding: 2%;
+    margin: 2%;
+}
 
 /* slideshow css */
 
