@@ -14,7 +14,7 @@ const store = {
         },
         //2
         {
-            question: "Lion's Head is location in what country?",
+            question: "Lion's Head is a location in what country?",
             options: [
                 " Madagascar",
                 " India",

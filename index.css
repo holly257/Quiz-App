@@ -44,6 +44,10 @@ input {
     margin-left: 5%;
 }
 
+button { 
+    cursor:pointer; 
+}
+
 .container {
     background-color: rgba(22, 22, 22, 0.94);
     margin: 0;
@@ -151,6 +155,7 @@ input {
     text-align: left;
     padding: 2%;
     margin: 2%;
+    line-height: 160%;
 }
 
 /* slideshow css */
@@ -176,30 +181,34 @@ input {
 
 .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 3s;
     animation-name: fade;
-    animation-duration: 2s;
+    animation-duration: 3s;
+    transition: transform 1500ms ease-out;
+    transition: transform 1500ms ease-in;
   }
 
   @-webkit-keyframes fade {
-    from {opacity: .4}
+    from {opacity: .5}
     to {opacity: 1}
   }
 
   @keyframes fade {
-    from {opacity: .4}
+    from {opacity: .5}
     to {opacity: 1}
   } 
 
+/* media sizes */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .container {
     font-size: 18px;
     font-weight: 500;
-    width: 90%;
-    height: 60%;
+    width: 80%;
+    max-width: 600px;
+    height: 70%;
     margin-bottom: 20px;
     margin-top: 20px;
-    }
+}
 
     .submit-next-button {
         position: absolute;
@@ -226,6 +235,11 @@ input {
     #home {
         margin-top: 35%;
         font-size: 110%;
+    }
+
+    #correct-statement {
+        line-height: 140%;
+        font-size: 80%;
     }
     /* center beginning and results div horizontally */
 }
