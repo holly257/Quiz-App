@@ -4,7 +4,7 @@ main {
     font-family: 'Montserrat', sans-serif;
     color: white;
     text-shadow: 1px 1px black;
-    font-size: 125%;
+    font-size: 150%;
 }
 
 * {
@@ -45,9 +45,8 @@ input {
 }
 
 .container {
-    background-color: rgba(22, 22, 22, 0.918);
+    background-color: rgba(22, 22, 22, 0.94);
     margin: 0;
-    /* padding: 2%; */
     border: 2px solid white;
     position: absolute;
     top: 50%;
@@ -55,6 +54,8 @@ input {
     transform: translate(-50%, -50%);
     z-index: 10;
     border-radius: 15px;
+    width: 50%;
+    height: 70%;
 }
 
 .top-div {
@@ -94,6 +95,12 @@ input {
     color: black;
     margin-left: auto;
     margin-right: auto;
+    position: absolute;
+    bottom: 2%;
+    width: 50%;
+    height: 10%;
+    left: -50%;
+    right: -50%;
 }
 
 .question-div, .correct-incorrect, .results {
@@ -102,10 +109,15 @@ input {
 
 #home{
     padding: 1%;
+    margin-top: 10%;
+    font-size: 150%;
 }
 
 #final-score {
     padding: 2%;
+    margin-top: 15%;
+    font-size: 150%;
+    text-shadow: 1px 1px grey;
 }
 
 #answer-selections {
@@ -183,18 +195,10 @@ input {
     .container {
     font-size: 18px;
     font-weight: 500;
-    width: 80%;
-    height: 55%;
+    width: 90%;
+    height: 60%;
     margin-bottom: 20px;
     margin-top: 20px;
-    }
-
-    #final-score {
-        margin-top: 18%;
-    }
-
-    #restart-button, #start{
-        width: 80%;
     }
 
     .submit-next-button {
@@ -206,8 +210,42 @@ input {
         right: -50%;
     }
 
+    .top-div .scorecard::before {
+        content: "\A";
+        white-space: pre;
+    }
+
+    #final-score {
+        margin-top: 18%;
+    }
+
+    #restart-button, #start{
+        width: 80%;
+    }
+
     #home {
         margin-top: 35%;
+        font-size: 110%;
     }
     /* center beginning and results div horizontally */
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+    .container {
+        height: 50%;
+        width: 60%;
+        font-size: 130%;
+    }
+
+    #home {
+        margin-top: 20%;
+    }
+
+    #home > h1 {
+        font-size: 150%;
+    }
+
+    #start {
+        margin-top: 10%;
+    }
 }

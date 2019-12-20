@@ -52,7 +52,7 @@ const store = {
         {
             question: "Kosovo used to be a part of which other country?",
             options: [
-                " None, they have always been independant",
+                " They have always been independant",
                 " Bosnia",
                 " Russia",
                 " Serbia"
