@@ -270,3 +270,20 @@ button {
         margin-top: 10%;
     }
 }
+
+@media (min-device-width: 1400px) {
+    .submit-next-button {
+        display: block;
+        position: absolute;
+        bottom: -10px;
+        width: 20%;
+        height: 8%;
+        left: -20%;
+        right: -80%;
+    }
+
+    #restart-button {
+        position: relative;
+        bottom: 20px;
+    }
+}
