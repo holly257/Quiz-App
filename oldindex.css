@@ -49,8 +49,6 @@ button {
 }
 
 .container {
-    font-size: 18px;
-    font-weight: 500;
     background-color: rgba(22, 22, 22, 0.94);
     margin: 0;
     border: 2px solid white;
@@ -60,11 +58,9 @@ button {
     transform: translate(-50%, -50%);
     z-index: 10;
     border-radius: 15px;
-    width: 80%;
-    max-width: 600px;
-    height: 75%;
+    width: 50%;
+    height: 70%;
 }
-
 
 .top-div {
     background-color: lightblue;
@@ -75,11 +71,6 @@ button {
     text-shadow: 1px 1px white;
 }
 
-.top-div .scorecard::before {
-    content: "\A";
-    white-space: pre;
-}
-
 .start-restart-button {
     font-size: 25px;
     width: 300px;
@@ -88,10 +79,6 @@ button {
     background-color: lightblue;
     border-radius: 10px;
     color: black;
-}
-
-#restart-button, #start{
-    width: 80%;
 }
 
 .placement {
@@ -113,9 +100,9 @@ button {
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    bottom: 0;
+    bottom: 2%;
     width: 50%;
-    height: 30px;
+    height: 10%;
     left: -50%;
     right: -50%;
 }
@@ -126,14 +113,13 @@ button {
 
 #home{
     padding: 1%;
-    margin-top: 35%;
-    font-size: 110%;
+    margin-top: 10%;
+    font-size: 150%;
 }
-
 
 #final-score {
     padding: 2%;
-    margin-top: 18%;
+    margin-top: 15%;
     font-size: 150%;
     text-shadow: 1px 1px grey;
 }
@@ -163,15 +149,13 @@ button {
 
 #next-button {
     align-content: center;
-    font-size: 90%;
 }
 
 #correct-statement {
     text-align: left;
     padding: 2%;
     margin: 2%;
-    line-height: 140%;
-    font-size: 80%;
+    line-height: 160%;
 }
 
 /* slideshow css */
@@ -215,7 +199,65 @@ button {
   } 
 
 /* media sizes */
+@media (max-device-width : 480px) {
+    .container {
+    font-size: 18px;
+    font-weight: 500;
+    width: 80%;
+    max-width: 600px;
+    height: 75%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    }
+
+    .submit-next-button {
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        height: 10%;
+        left: -50%;
+        right: -50%;
+    }
+
+    .top-div {
+        height: 80%:
+    }
+
+    .top-div .scorecard::before {
+        content: "\A";
+        white-space: pre;
+    }
+
+    #final-score {
+        margin-top: 18%;
+    }
+
+    #restart-button, #start{
+        width: 80%;
+    }
+
+    #home {
+        margin-top: 35%;
+        font-size: 110%;
+    }
+
+    #correct-statement {
+        line-height: 140%;
+        font-size: 80%;
+    }
+
+    #next-button {
+        font-size: 90%;
+    }
+}
+
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+    .container {
+        height: 50%;
+        width: 60%;
+        font-size: 130%;
+    }
+
     #home {
         margin-top: 20%;
     }
