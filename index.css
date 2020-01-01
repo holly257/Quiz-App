@@ -20,6 +20,10 @@ h3 {
     font-family: 'Inria Serif', serif;
 }
 
+h1 {
+    font-family: 'Inria Serif', serif;
+}
+
 h2 {
     padding: 1%;
     margin: 1%;
@@ -160,6 +164,7 @@ button {
 
 #intro {
     text-align: center;
+    font-size: 15px;
 }
 
 #question-line {
