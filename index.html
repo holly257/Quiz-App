@@ -39,7 +39,7 @@
 
         <section class="container homeScreen">
             <header id="home">
-                <h1>Geography Quiz:</h1>
+                <h3>Geography Quiz:</h3>
                 <p id="intro">How much do you know about geography?</p>
             </header>
             <div>
@@ -49,28 +49,35 @@
 
         <section class="question-div container">
             <div class="top-div">
-                <h1>Geography Quiz:</h1>
+                <h3>Geography Quiz:</h3>
                 <h4 class="placement question-number">Current Question:</h4>
                 <h4 class="placement scorecard">Score:</h4>
             </div>
-            <h2 id="question-line" ></h2>
-            <div id="answer-selections">
-                <form id="submit-form">
-                    <input tabindex="1" id="answerOne" name="radioButtons" type="radio" value=""><label id="answerOneLabel" for="answerOne"></label><br>
-                    <input tabindex="2" id="answerTwo" name="radioButtons" type="radio" value=""><label id="answerTwoLabel" for="answerTwo"></label><br>
-                    <input tabindex="3" id="answerThree" name="radioButtons" type="radio" value=""><label id="answerThreeLabel" for="answerThree"></label><br>
-                    <input tabindex="4" id="answerFour" name="radioButtons" type="radio" value=""><label id="answerFourLabel" for="answerFour"></label><br>
-                    <div>
-                        <button class="submit-next-button" id="submit-button">Submit</button>
+            
+            <fieldset>
+                <legend><h2 id="question-line" >error</h2></legend>
+                    <div id="answer-selections">
+                        <form id="submit-form">
+                            <input tabindex="1" id="answerOne" name="radioButtons" type="radio" value=""><label id="answerOneLabel" for="answerOne">.</label><br>
+                            <input tabindex="2" id="answerTwo" name="radioButtons" type="radio" value=""><label id="answerTwoLabel" for="answerTwo">.</label><br>
+                            <input tabindex="3" id="answerThree" name="radioButtons" type="radio" value=""><label id="answerThreeLabel" for="answerThree">.</label><br>
+                            <input tabindex="4" id="answerFour" name="radioButtons" type="radio" value=""><label id="answerFourLabel" for="answerFour">.</label><br>
+                            <div>
+                                <button class="submit-next-button" id="submit-button">Submit</button>
+                            </div>
+                        </form> 
                     </div>
-                </form> 
-            </div>
+                
+            </fieldset>
+
+
+            
     
         </section>
 
         <section class="correct-incorrect container">
             <div class="top-div">
-                <h1>Geography Quiz:</h1>
+                <h3>Geography Quiz:</h3>
                 <h4 class="placement question-number">Current Question: </h4>
                 <h4 class="placement scorecard">Score: </h4>
             </div>
@@ -85,7 +92,7 @@
 
         <section class="results container">
             <div class="top-div">
-                <h1>Geography Quiz:</h1>
+                <h3>Geography Quiz:</h3>
                 <h4 class="placement question-number">Current Question: </h4><br>
                 <h4 class="placement scorecard">Score: </h4>
             </div>
