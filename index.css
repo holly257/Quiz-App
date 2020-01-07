@@ -170,7 +170,6 @@ button {
 #question-line {
     font-size: 14px;
     padding: 2%;
-    padding-top: 7%;
     margin: 3%;
 }
 
@@ -289,5 +288,11 @@ button {
     #restart-button {
         position: relative;
         bottom: 20px;
+    }
+}
+
+@media (min-device-width: 650px) {
+    #home{
+        margin-top: 10%;
     }
 }
