@@ -170,6 +170,7 @@ button {
 #question-line {
     font-size: 14px;
     padding: 2%;
+    padding-top: 7%;
     margin: 3%;
 }
 
@@ -245,7 +246,36 @@ button {
     }
 }
 
+@media (min-height: 700px) {
+    .container {
+        height: 50%;
+    }
+}
+
+@media (min-height: 1000px) {
+    .container {
+        height: 40%;
+    }
+}
+
 @media (min-device-width: 1400px) {
+    .submit-next-button {
+        display: block;
+        position: absolute;
+        bottom: -10px;
+        width: 20%;
+        height: 8%;
+        left: -20%;
+        right: -80%;
+    }
+
+    #restart-button {
+        position: relative;
+        bottom: 20px;
+    }
+}
+
+@media (min-device-width: 750px) and (min-device-height: 450px) {
     .submit-next-button {
         display: block;
         position: absolute;
